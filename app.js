@@ -11,7 +11,6 @@ async function convertCurrency() {
 
   try {
     const response = await fetch(`https://api.exchangerate.host/convert?from=${from}&to=${to}`);
-    if (!response.ok) throw new Error("API call failed");
 
     const data = await response.json();
     if (!data.success) throw new Error("Exchange rate fetch failed");
